@@ -1,7 +1,6 @@
 package app.entities;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class Employee {
     private  int id;
