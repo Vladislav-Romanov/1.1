@@ -1,6 +1,7 @@
 package app.entities;
 
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Employee {
     private  int id;
@@ -41,11 +42,8 @@ public class Employee {
     }
 
     @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
+    public String toString()
+    {
+        return "Фамилия-"+this.id+" Имя-"+this.name+" Зарплата-"+this.salary;
     }
 }

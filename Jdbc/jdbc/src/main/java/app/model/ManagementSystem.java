@@ -10,6 +10,7 @@ import java.util.Collection;
 public class ManagementSystem {
 
     private static Connection con;
+    private static ManagementSystem instance;
 
     public ManagementSystem() throws Exception {
         try {
@@ -24,8 +25,8 @@ public class ManagementSystem {
     }
 
 
-    public Collection<Employee> getAllStudents() throws SQLException {
-        Collection<Employee> employees = new ArrayList<Employee>();
+    public ArrayList<Employee> getAllStudents() throws SQLException {
+        ArrayList<Employee> employees = new ArrayList<Employee>();
 
         Statement stmt = null;
         ResultSet rs = null;
@@ -36,6 +37,9 @@ public class ManagementSystem {
             while (rs.next()) {
                 Employee employee = new Employee(rs.getInt("id"),rs.getString("name"),rs.getInt("salary"));
                 employees.add(employee);
+            }
+            for(int i=0;i<employees.size();i++){
+                System.out.println(employees.get(i).toString());
             }
         } finally {
             if (rs != null) {
@@ -68,7 +72,7 @@ public class ManagementSystem {
                     "INSERT INTO employee " +
                             "(id, name, salary) " +
                             "VALUES (?, ?, ?)");
-            stmt.setInt(1, employee.getSalary());
+            stmt.setInt(1, employee.getId());
             stmt.setString(2, employee.getName());
             stmt.setInt(3, employee.getSalary());
             stmt.execute();
