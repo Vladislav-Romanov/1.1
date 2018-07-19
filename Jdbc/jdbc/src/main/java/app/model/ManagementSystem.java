@@ -10,7 +10,6 @@ import java.util.Collection;
 public class ManagementSystem {
 
     private static Connection con;
-    private static ManagementSystem instance;
 
     public ManagementSystem() throws Exception {
         try {
