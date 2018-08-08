@@ -1,11 +1,11 @@
-package ru.ncedu.java.tasks;
+﻿package ru.ncedu.java.tasks;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Comparator;
 
 
-public class Employee  {
+public class Employee implements Comparable {
 //private field
 private String second_name=null;     //фамилия
 private String first_name=null;	//имя
